@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply font-source-sans-pro;
+}
+
+body {
+  @apply scroll-smooth text-slate-700;
+}
