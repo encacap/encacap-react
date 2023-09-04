@@ -21,15 +21,15 @@ const UncontrolledCheckbox = ({
   const [isChecked, setIsChecked] = useState(false);
 
   const iconTouchedClassName = twMerge(
-    !indeterminate && !isChecked && "text-white group-hover:text-primary-700",
+    !indeterminate && !isChecked && "text-white group-hover:text-teal-500",
     !indeterminate && isChecked && "text-white group-hover:text-white",
-    indeterminate && "text-primary-700 group-hover:text-primary-700",
+    indeterminate && "text-teal-500 group-hover:text-teal-500",
     disabled && isChecked && "text-white group-hover:text-white",
     disabled && !isChecked && "text-gray-100 group-hover:text-gray-100",
   );
 
   const iconClassName = twMerge(
-    "absolute top-1/2 left-1/2 z-0 mt-px -translate-x-1/2 -translate-y-1/2 text-white group-hover:text-primary-700",
+    "absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-white group-hover:text-teal-500",
     iconTouchedClassName,
   );
 

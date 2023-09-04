@@ -8,6 +8,6 @@ export interface TableProps
     Partial<Pick<TableOptions<unknown>, "getCoreRowModel">>,
     HTMLAttributes<HTMLTableElement> {
   columns: TableColumnDef[];
-  containerClassName?: string;
+  tableContainerClassName?: string;
   isLoading?: boolean;
 }

@@ -26,6 +26,9 @@ const App = () => {
       columnHelper.accessor((row) => row.email, {
         id: "email",
         header: "Email",
+        meta: {
+          className: "text-red-500",
+        },
       }),
       columnHelper.accessor((row) => `${row.first_name} ${row.last_name}`, {
         id: "fullName",

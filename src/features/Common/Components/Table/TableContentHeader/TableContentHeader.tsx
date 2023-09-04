@@ -12,7 +12,7 @@ const TableContentHeader = ({ headerGroups, onDragEnd }: TableContentHeaderProps
   return (
     <thead className="border-b-2 border-gray-100">
       {headerGroups.map((headerGroup) => (
-        <TableContentHeaderGroup key={headerGroup.id} group={headerGroup} onDragEnd={onDragEnd} />
+        <TableContentHeaderGroup group={headerGroup} key={headerGroup.id} onDragEnd={onDragEnd} />
       ))}
     </thead>
   );

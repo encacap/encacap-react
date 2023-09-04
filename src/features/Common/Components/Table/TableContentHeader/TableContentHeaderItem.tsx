@@ -4,6 +4,8 @@ import { DragSourceMonitor, useDrag, useDrop } from "react-dnd";
 import { getEmptyImage } from "react-dnd-html5-backend";
 import { twMerge } from "tailwind-merge";
 
+import useTableQueryOrder from "@common/Hooks/useTableQueryOrder";
+
 import TableContentHeaderItemContainer from "./TableContentHeaderItemContainer";
 import TableContentHeaderItemContent from "./TableContentHeaderItemContent";
 
@@ -14,6 +16,8 @@ export interface TableContentHeaderItemProps {
 
 const TableContentHeaderItem = ({ header, onDragEnd }: TableContentHeaderItemProps) => {
   const column = useMemo(() => header.column, [header]);
+  const [orderDirection, setOrderDirection] = useTableQueryOrder(column.id as string);
+
   const cellRef = useRef<HTMLTableCellElement>(null);
 
   const headerContent = useMemo(
@@ -57,6 +61,8 @@ const TableContentHeaderItem = ({ header, onDragEnd }: TableContentHeaderItemPro
       <TableContentHeaderItemContent
         content={headerContent}
         className={twMerge(collected.isDragging && "opacity-0")}
+        isSorted={orderDirection}
+        onClick={setOrderDirection}
       />
     </TableContentHeaderItemContainer>
   );
